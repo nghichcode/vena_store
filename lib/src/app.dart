@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vena_store/src/screen/login_screen.dart';
+import 'package:vena_store/src/screen/loading_screen.dart';
 
 class App extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Login(),
+      home: Loading(),
       debugShowCheckedModeBanner: false,
     );
   }
