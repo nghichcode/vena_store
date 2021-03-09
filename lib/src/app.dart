@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vena_store/src/screen/loading_screen.dart';
+import 'package:vena_store/src/screens/loading_screen.dart';
 
 class App extends StatelessWidget {
   @override

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:vena_store/src/screen/main/admin_screen.dart';
-import 'package:vena_store/src/screen/main/calculate_screen.dart';
-import 'package:vena_store/src/screen/main/detail_screen.dart';
-import 'package:vena_store/src/screen/main/search_screen.dart';
-import 'package:vena_store/src/screen/main/store_screen.dart';
+import 'package:vena_store/src/screens/main/admin_screen.dart';
+import 'package:vena_store/src/screens/main/calculate_screen.dart';
+import 'package:vena_store/src/screens/main/detail_screen.dart';
+import 'package:vena_store/src/screens/main/search_screen.dart';
+import 'package:vena_store/src/screens/main/store_screen.dart';
 
 class Main extends StatefulWidget {
   @override

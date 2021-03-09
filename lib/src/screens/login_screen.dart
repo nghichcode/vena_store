@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vena_store/src/screen/main_screen.dart';
+import 'package:vena_store/src/screens/main_screen.dart';
 
 class Login extends StatefulWidget {
   @override
