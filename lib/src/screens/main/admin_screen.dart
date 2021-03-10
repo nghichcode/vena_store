@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vena_store/src/screens/login_screen.dart';
 
 class MainAdmin extends StatefulWidget {
   @override
@@ -10,7 +11,14 @@ class _MainAdminState extends State<MainAdmin> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text('Main Admin'),
+        child: OutlineButton(
+          child: Text('Nav'),
+          onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Login(),
+              )),
+        ),
       ),
     );
   }
