@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:vena_store/src/screens/main_screen.dart';
+import 'package:vena_store/src/screens/signup_screen.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -17,16 +18,6 @@ class _LoginState extends State<Login> {
       _modal_type = MODAL_TYPE.PROCESSING;
     });
 
-    int time = new DateTime.now().millisecondsSinceEpoch;
-    const hash_token = crypt_lib.hash('BFRS' + '::' + config.encryption_key + '::' + time);
-
-    const tokens = new TokenObj();
-    tokens.mapobj({ token: hash_token, refresh_token: ''});
-    const store = new StoreObj();
-    const {realm} = this.props;
-    saveUser(realm, {tokens: tokens.properties, store: store.properties});
-    this.setState({processing: false});
-    this.props.setLogin(true);
   }
 
   @override
@@ -38,7 +29,7 @@ class _LoginState extends State<Login> {
             child: Center(
               child: SingleChildScrollView(
                 child: Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -119,7 +110,13 @@ class _LoginState extends State<Login> {
                             Expanded(
                                 child: RawMaterialButton(
                                   child: Text('ĐĂNG KÝ'),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SignUp()),
+                                    );
+                                  },
                                   padding: EdgeInsets.symmetric(vertical: 12),
                                   fillColor: Colors.orange,
                                   textStyle:
@@ -137,7 +134,13 @@ class _LoginState extends State<Login> {
                             Expanded(
                                 child: RawMaterialButton(
                                   child: Text('ĐĂNG NHẬP NHANH'),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Main()),
+                                    );
+                                  },
                                   padding: EdgeInsets.symmetric(vertical: 12),
                                   fillColor: Colors.lime.shade600,
                                   textStyle:

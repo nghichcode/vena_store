@@ -7,15 +7,21 @@ class CONFIG {
   static final String encryptionKey = 'eFQlByOIVdLnvhxus91H2dIqKq5W8OzF';
   static final int schemaVersion = 2;
 
-  String getLocation(String name) {
+  static String getLocation(String name) {
     return host + apiPath + name;
   }
 
-  String getImage(String name) {
+  static String getImage(String name) {
     if (name == null) {
       return null;
     }
     name = name.split('.').join('/');
     return host + apiPath + imagePath + name;
   }
+}
+
+class PATH {
+  static const SEARCH_PRODUCT = "search/search_store_product";
+  static const SEARCH_STORE_PRODUCT = "search/search_store_product";
+  static const ADD_PRODUCT = "search/add_product_post";
 }

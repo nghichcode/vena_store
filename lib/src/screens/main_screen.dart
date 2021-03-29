@@ -64,7 +64,7 @@ class _MainState extends State<Main> {
       bottomNavigationBar: BottomNavigationBar(
         items: renderBottomTabs(tabList),
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.amber.shade800,
         unselectedItemColor: Colors.grey.shade800,
         onTap: _onItemTapped,
       ),
