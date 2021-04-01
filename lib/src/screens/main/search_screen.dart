@@ -125,7 +125,7 @@ class _MainSearchState extends State<MainSearch> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add, size: 36,),
-        backgroundColor: Colors.lightGreen.shade600,
+        backgroundColor: Colors.deepOrange,
         onPressed: () {
           AlertDialog alert = AlertDialog(
             title: Text('OK'),

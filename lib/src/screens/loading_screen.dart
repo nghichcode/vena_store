@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:vena_store/src/screens/login_screen.dart';
 import 'package:vena_store/src/screens/main_screen.dart';
-import 'package:vena_store/src/screens/signup_screen.dart';
+import 'package:vena_store/src/screens/signup_ui_screen.dart';
 
 Future<String> fetchUser() async {
   var client = http.Client();

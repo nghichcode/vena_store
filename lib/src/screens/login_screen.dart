@@ -1,7 +1,6 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:vena_store/src/screens/main_screen.dart';
-import 'package:vena_store/src/screens/signup_screen.dart';
+import 'package:vena_store/src/screens/signup_ui_screen.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -57,7 +56,7 @@ class _LoginState extends State<Login> {
                                           borderSide: BorderSide.none,
                                           borderRadius:
                                           BorderRadius.all(
-                                              Radius.circular(20.0))),
+                                              Radius.circular(28.0))),
                                       filled: true,
                                       fillColor: Colors.deepOrangeAccent
                                           .shade200),
@@ -79,7 +78,7 @@ class _LoginState extends State<Login> {
                                           borderSide: BorderSide.none,
                                           borderRadius:
                                           BorderRadius.all(
-                                              Radius.circular(20.0))),
+                                              Radius.circular(28.0))),
                                       filled: true,
                                       fillColor: Colors.deepOrangeAccent
                                           .shade200),
@@ -100,7 +99,7 @@ class _LoginState extends State<Login> {
                                       color: Colors.white, fontSize: 16.0),
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
-                                      BorderRadius.all(Radius.circular(18.0))),
+                                      BorderRadius.all(Radius.circular(28.0))),
                                 ))
                           ],
                         ),
@@ -124,7 +123,7 @@ class _LoginState extends State<Login> {
                                       color: Colors.white, fontSize: 16.0),
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
-                                      BorderRadius.all(Radius.circular(18.0))),
+                                      BorderRadius.all(Radius.circular(28.0))),
                                 ))
                           ],
                         ),
@@ -148,7 +147,7 @@ class _LoginState extends State<Login> {
                                       color: Colors.white, fontSize: 16.0),
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
-                                      BorderRadius.all(Radius.circular(18.0))),
+                                      BorderRadius.all(Radius.circular(28.0))),
                                 ))
                           ],
                         ),
@@ -169,7 +168,7 @@ class _LoginState extends State<Login> {
                                   textColor: Colors.deepPurple,
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
-                                      BorderRadius.all(Radius.circular(18.0))),
+                                      BorderRadius.all(Radius.circular(28.0))),
                                 ))
                           ],
                         ),
