@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class MainDetail extends StatefulWidget {
@@ -39,98 +37,172 @@ class _MainDetailState extends State<MainDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
+          child: Stack(
+            children: [
+              Row(children: [
                 Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 8.0,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    width: 300,
+                    height: 240,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Container(
+                        color: Colors.deepPurple,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                                top: -60,
+                                right: -60,
+                                child: Transform.rotate(
+                                  angle: 3.14 / 16,
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(vertical: 10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.deepPurple.shade400,
+                                      borderRadius: BorderRadius.circular(40),
+                                    ),
+                                    width: 160,
+                                    height: 160,
+                                  ),
+                                )),
+                            Positioned(
+                                bottom: -54,
+                                left: -54,
+                                child: Transform.rotate(
+                                  angle: 3.14 / 10,
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(vertical: 10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.deepPurple.shade700,
+                                      borderRadius: BorderRadius.circular(40),
+                                    ),
+                                    width: 160,
+                                    height: 160,
+                                  ),
+                                )),
+                            Center(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SizedBox(height: 18),
+                                    Text(
+                                      'Lorem Ipsum Dolor',
+                                      style: TextStyle(
+                                          fontSize: 26,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Text(
+                                      'ipsum_dolor@lorem.com',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          color:
+                                              Colors.white.withOpacity(0.66)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    Stack(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 20, top: 48),
-                          child: Card(
-                            elevation: 3.0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            child: Row(
+                  ),
+                )
+              ]),
+              Container(
+                  margin: EdgeInsets.only(top: 200, left: 10, right: 10),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(25),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.amber.shade800.withOpacity(0.3),
+                                offset: const Offset(0, 10),
+                                blurRadius: 60.0,
+                              ), //BoxShadow
+                            ]),
+                        child: Column(
+                          children: [
+                            Row(
                               children: [
                                 Expanded(
-                                    child: Padding(
-                                  padding: EdgeInsets.only(bottom: 40, top: 60),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        'Nguyễn Văn Nam',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.symmetric(vertical: 10),
-                                        child: Text(
-                                          'nvn@abc.com',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 16,
-                                              color: Colors.grey),
-                                        ),
-                                      ),
-                                    ],
+                                    child: Container(
+                                  padding: EdgeInsets.only(top: 30, bottom: 10),
+                                  child: Image(
+                                    image:
+                                        AssetImage('images/man_freelancer.jpg'),
+                                    fit: BoxFit.fill,
                                   ),
-                                ))
+                                )),
                               ],
                             ),
-                          ),
-                        ),
-                        Container(
-                          child: Center(
-                            child: Stack(
+                            Row(
                               children: [
-                                Container(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image(
-                                      image: AssetImage('images/boy.jpg'),
-                                      height: 80,
-                                      width: 80,
+                                SizedBox(width: 10),
+                                Expanded(
+                                    child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                        child: Text(
+                                      'Lorem ipsum dolor sit amet',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                      ),
+                                    )),
+                                    SizedBox(height: 10),
+                                    Text(
+                                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non.',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                          color: Colors.grey),
                                     ),
-                                  ),
-                                  padding: EdgeInsets.all(10),
-                                  color: Colors.deepOrange,
-                                )
+                                    SizedBox(height: 20),
+                                  ],
+                                )),
+                                SizedBox(width: 10),
                               ],
                             ),
-                            // child: CircleAvatar(
-                            //   backgroundImage: AssetImage('images/boy.jpg'),
-                            //   // child: Image.asset('images/boy.jpg'),
-                            //   backgroundColor: Colors.red,
-                            //   radius: 50,
-                            // )
-                          ),
+                          ],
                         ),
-                      ],
-                    )
-                  ],
-                )),
-              ],
-            ),
-            _row,
-            _row,
-            _row,
-            _row,
-          ],
+                      ),
+                      SizedBox(height: 10),
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 18, horizontal: 10),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(25),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.amber.shade800.withOpacity(0.3),
+                                offset: const Offset(0, 10),
+                                blurRadius: 60.0,
+                              ), //BoxShadow
+                            ]),
+                        child: Row(
+                          children: [
+                            Icon(Icons.location_on_outlined),
+                            Text('Abc')
+                          ],
+                        ),
+                      ),
+                    ],
+                  )),
+            ],
+          ),
         ),
       ),
     );
