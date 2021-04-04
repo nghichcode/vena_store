@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vena_store/src/components/awesome_tab.dart';
 import 'package:vena_store/src/components/awesome_text_field.dart';
-import 'package:vena_store/src/components/signup_role_card.dart';
-import 'package:vena_store/src/components/slider_tab.dart';
-import 'package:vena_store/src/types/types.dart';
+import 'file:///D:/space/vena_store/lib/src/screens/signup/signup_role_card.dart';
+import 'package:vena_store/src/components/pure.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -33,6 +31,7 @@ class _SignUpState extends State<SignUp> {
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   child: Column(
                     children: [
+                      AwesomeTextField(labelText: 'Tài khoản'),
                       AwesomeTextField(labelText: 'Email'),
                       AwesomeTextField(labelText: 'Mật khẩu'),
                       AwesomeTextField(labelText: 'Nhập lại mật khẩu'),

@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:vena_store/src/components/pure.dart';
 import 'package:vena_store/src/components/search_bar.dart';
 import 'package:vena_store/src/utils/config.dart';
 
@@ -70,7 +71,7 @@ class _MainSearchState extends State<MainSearch> {
             itemCount: list.length,
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
-                contentPadding: EdgeInsets.all(10.0),
+                contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 8.0),
                 leading: ClipOval(
                   child: new Image.network(
                     CONFIG.getImage(list[index].img_url),
@@ -79,52 +80,67 @@ class _MainSearchState extends State<MainSearch> {
                     width: 40.0,
                   ),
                 ),
-                title: new Text(list[index].product_name),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                subtitle: Flex(
+                  direction: Axis.horizontal,
                   children: [
-                    Text(list[index].gtin_code),
-                    Text('EXP: ${list[index].exp}'),
-                    Text(list[index].storename),
-                  ],
-                ),
-                trailing: Column(
-                  children: [
-                    Container(
-                      child: Wrap(
-                        children: [
-                          Icon(
-                            Icons.check_circle_rounded,
-                            color: Colors.red.shade400,
-                            size: 16.0,
-                          ),
-                          Icon(
-                            Icons.star_outline_rounded,
-                            color: Colors.red.shade400,
-                            size: 16.0,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Text(list[index].price),
-                    Container(
-                      child: Text(
-                        list[index].price,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      padding: EdgeInsets.all(3.0),
-                      decoration: BoxDecoration(
-                          color: Colors.red.shade600,
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(10.0))),
-                    ),
+                    Flexible(
+                        flex: 8,
+                        fit: FlexFit.tight,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(list[index].product_name),
+                            Text(list[index].gtin_code),
+                            Text('EXP: ${list[index].exp}'),
+                            Text(list[index].storename),
+                          ],
+                        )),
+                    Flexible(
+                        flex: 4,
+                        fit: FlexFit.tight,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: Wrap(
+                                children: [
+                                  Icon(
+                                    Icons.check_circle_rounded,
+                                    color: Colors.red.shade400,
+                                    size: 16.0,
+                                  ),
+                                  Icon(
+                                    Icons.star_outline_rounded,
+                                    color: Colors.red.shade400,
+                                    size: 16.0,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(list[index].price),
+                            Container(
+                              child: Text(
+                                '${list[index].price} m',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(3.0),
+                              decoration: BoxDecoration(
+                                  color: Colors.red.shade600,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0))),
+                            ),
+                          ],
+                        ))
                   ],
                 ),
               );
             }),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add, size: 36,),
+        child: Icon(
+          Icons.add,
+          size: 36,
+        ),
         backgroundColor: Colors.deepOrange,
         onPressed: () {
           AlertDialog alert = AlertDialog(

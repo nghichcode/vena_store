@@ -10,7 +10,8 @@ class SearchBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      automaticallyImplyLeading: false,
+      backgroundColor: Colors.deepOrange.shade600,
       title: Padding(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 4.0),
         child: TextField(
@@ -19,7 +20,7 @@ class SearchBar extends StatelessWidget implements PreferredSizeWidget {
             hintText: 'Tài khoản',
             hintStyle: TextStyle(color: Colors.grey),
             filled: true,
-            fillColor: Colors.grey.shade200,
+            fillColor: Colors.white,
             isDense: true,
             contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 6),
             border: OutlineInputBorder(
@@ -33,7 +34,7 @@ class SearchBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           icon: Icon(
             Icons.qr_code,
-            color: Colors.grey.shade600,
+            color: Colors.white,
             size: 40,
           ),
           onPressed: () => onScan(context),
